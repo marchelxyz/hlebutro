@@ -1,24 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Хлеб & Утро</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding: 2rem; background: #fff8f0; }
-        h1 { color: #8B4513; }
-        button { padding: 1rem 2rem; background: #f4a261; border: none; border-radius: 8px; font-size: 1rem; color: white; }
-    </style>
-    <script>
-        function orderBread() {
-            alert("Спасибо за заказ! Хлеб уже в пути 🌅🍞");
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ХлебУтро – Заказ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #3b2f2f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #8b4513;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, select, button {
+      font-size: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #dcbba0;
+      border-radius: 0.5rem;
+      outline: none;
+    }
+
+    button {
+      background-color: #f4a261;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e07a3f;
+    }
+  </style>
 </head>
 <body>
-    <h1>Доброе утро! 👋</h1>
-    <p>Ваш свежий хлеб уже почти у двери.</p>
-    <button onclick="orderBread()">Заказать хлеб</button>
+  <h1>🥖 ХлебУтро</h1>
+  <p>Закажи свежий хлеб к утру!</p>
+  <form method="POST" action="/order">
+    <input type="text" name="name" placeholder="Ваше имя" required />
+    <input type="text" name="address" placeholder="Адрес доставки" required />
+    <select name="time" required>
+      <option value="">Выбери время доставки</option>
+      <option>6:00–7:00</option>
+      <option>7:00–8:00</option>
+      <option>8:00–9:00</option>
+    </select>
+    <button type="submit">Оформить заказ</button>
+  </form>
 </body>
 </html>
